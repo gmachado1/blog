@@ -8,11 +8,13 @@ public class Time implements Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	
+	/**
+	 * 
+	 */
 	private String nome;
 	private String estado;
-	private Jogador tecnico;
-	private List<Jogador> jogadores;
+	private Tecnico tecnico;
+	transient private Estadio estadio;
 	
 	public String getNome() {
 		return nome;
@@ -26,19 +28,16 @@ public class Time implements Serializable {
 	public void setEstado(String estado) {
 		this.estado = estado;
 	}
-	public Jogador getTecnico() {
+	public Tecnico getTecnico() {
 		return tecnico;
 	}
-	public void setTecnico(Jogador tecnico) {
+	public void setTecnico(Tecnico tecnico) {
 		this.tecnico = tecnico;
 	}
-	public List<Jogador> getJogadores() {
-		return jogadores;
+	public Estadio getEstadio() {
+		return estadio;
 	}
-	public void setJogadores(List<Jogador> jogadores) {
-		this.jogadores = jogadores;
+	public void setEstadio(Estadio estadio) {
+		this.estadio = estadio;
 	}
-
-	
-
 }
