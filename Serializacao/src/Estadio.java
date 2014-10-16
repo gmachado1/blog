@@ -10,8 +10,8 @@ public class Estadio  {
 		this.idade=49;
 		
 	}
-	public Estadio(String nome, int idade){
-		this.nome = nome;
+	public Estadio(String nome, Integer idade){
+		this.nome = nome;		
 		this.idade=idade;
 	}
 	public String getNome() {
