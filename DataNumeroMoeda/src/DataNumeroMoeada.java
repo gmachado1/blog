@@ -1,4 +1,5 @@
 import java.text.DateFormat;
+import java.text.NumberFormat;
 import java.text.ParseException;
 import java.util.Calendar;
 import java.util.Date;
@@ -53,72 +54,96 @@ public class DataNumeroMoeada {
 		DateFormat df = DateFormat.getDateInstance(DateFormat.SHORT);
 
 		String s = df.format(d4);
-		System.out.println("s-d4 = "+s);
-		
-		try{
-			Date d5=df.parse(s);
-			System.out.println("d5 = "+d5.toString());
-		}catch(ParseException p){
+		System.out.println("s-d4 = " + s);
+
+		try {
+			Date d5 = df.parse(s);
+			System.out.println("d5 = " + d5.toString());
+		} catch (ParseException p) {
 			p.printStackTrace();
 		}
-	
-	//Locale
-	
-	Calendar c1 = Calendar.getInstance();
-	c1.set(2014, 9, 14);
-	Date d6 = c1.getTime();
-	
-	Locale locIt = new Locale("it","IT");//italia
-	Locale locPt = new Locale("pt");//portugal
-	Locale locBr = new Locale("pt","BR");//brasil
-	Locale locIn = new Locale("hi","In");//india
-	Locale locJa = new Locale("ja");//japao
-	
-	DateFormat dfUS= DateFormat.getInstance();
-	System.out.println("US"+dfUS.format(d6));
-	
-	DateFormat dfUSfull= DateFormat.getDateInstance(DateFormat.FULL);
-	System.out.println("US- full -Hamburguer: "+dfUS.format(d6));
-	
-	DateFormat dfIT= DateFormat.getDateInstance(DateFormat.FULL,locIt);
-	System.out.println("Italia -Espaguete: "+dfIT.format(d6));
-	
-	DateFormat dfPT= DateFormat.getDateInstance(DateFormat.FULL,locPt);
-	System.out.println("Portugal - Bacalhau: "+dfPT.format(d6));
-	
-	DateFormat dfBr= DateFormat.getDateInstance(DateFormat.FULL,locBr);
-	System.out.println("Brasil - Feijoada: "+dfBr.format(d6));
-	
-	DateFormat dfIn= DateFormat.getDateInstance(DateFormat.FULL,locIn);
-	System.out.println("India- Chaat de Mumbai: "+dfIn.format(d6));
-	
-	DateFormat dfJp= DateFormat.getDateInstance(DateFormat.FULL,locJa);
-	System.out.println("Japão- Suchi: "+dfJp.format(d6));
-	
-	//NumberFormat
-	
-	Calendar c2 = Calendar.getInstance();
-	c2.set(2014, 9, 19);
-	
-	Date d7= c2.getTime();
-	Locale locBR =  new Locale("pt","BR");//Brasil
-	Locale locDK =  new Locale("da","DK");//Dinamarca
-	Locale locIT =  new Locale("it","IT");//Italia
-	System.out.println("pais");
-	System.out.println("def-"+locBR.getDisplayCountry());
-	System.out.println("loc-"+locBR.getDisplayCountry(locBR));
-	
-	System.out.println("\ndef-"+locDK.getDisplayCountry());
-	System.out.println("bra-"+locDK.getDisplayCountry(locBR));
-	System.out.println("loc-"+locDK.getDisplayCountry(locDK));
-	System.out.println("d>I-"+locDK.getDisplayCountry(locIT));
-	System.out.println("Lingua");
-	System.out.println("\ndef-"+locDK.getDisplayLanguage());
-	System.out.println("bra-"+locDK.getDisplayLanguage(locBR));
-	System.out.println("loc-"+locDK.getDisplayLanguage(locDK));
-	System.out.println("d>I-"+locDK.getDisplayLanguage(locIT));
-	
-	}
-	
 
+		// Locale
+
+		Calendar c1 = Calendar.getInstance();
+		c1.set(2014, 9, 14);
+		Date d6 = c1.getTime();
+
+		Locale locIt = new Locale("it", "IT");// italia
+		Locale locPt = new Locale("pt");// portugal
+		Locale locBr = new Locale("pt", "BR");// brasil
+		Locale locIn = new Locale("hi", "In");// india
+		Locale locJa = new Locale("ja");// japao
+
+		DateFormat dfUS = DateFormat.getInstance();
+		System.out.println("US" + dfUS.format(d6));
+
+		DateFormat dfUSfull = DateFormat.getDateInstance(DateFormat.FULL);
+		System.out.println("US- full -Hamburguer: " + dfUS.format(d6));
+
+		DateFormat dfIT = DateFormat.getDateInstance(DateFormat.FULL, locIt);
+		System.out.println("Italia -Espaguete: " + dfIT.format(d6));
+
+		DateFormat dfPT = DateFormat.getDateInstance(DateFormat.FULL, locPt);
+		System.out.println("Portugal - Bacalhau: " + dfPT.format(d6));
+
+		DateFormat dfBr = DateFormat.getDateInstance(DateFormat.FULL, locBr);
+		System.out.println("Brasil - Feijoada: " + dfBr.format(d6));
+
+		DateFormat dfIn = DateFormat.getDateInstance(DateFormat.FULL, locIn);
+		System.out.println("India- Chaat de Mumbai: " + dfIn.format(d6));
+
+		DateFormat dfJp = DateFormat.getDateInstance(DateFormat.FULL, locJa);
+		System.out.println("Japão- Suchi: " + dfJp.format(d6));
+
+		Calendar c2 = Calendar.getInstance();
+		c2.set(2014, 9, 19);
+
+		Date d7 = c2.getTime();
+		Locale locBR = new Locale("pt", "BR");// Brasil
+		Locale locDK = new Locale("da", "DK");// Dinamarca
+		Locale locIT = new Locale("it", "IT");// Italia
+		System.out.println("pais");
+		System.out.println("def-" + locBR.getDisplayCountry());
+		System.out.println("loc-" + locBR.getDisplayCountry(locBR));
+
+		System.out.println("\ndef-" + locDK.getDisplayCountry());
+		System.out.println("bra-" + locDK.getDisplayCountry(locBR));
+		System.out.println("loc-" + locDK.getDisplayCountry(locDK));
+		System.out.println("d>I-" + locDK.getDisplayCountry(locIT));
+		System.out.println("Lingua");
+		System.out.println("\ndef-" + locDK.getDisplayLanguage());
+		System.out.println("bra-" + locDK.getDisplayLanguage(locBR));
+		System.out.println("loc-" + locDK.getDisplayLanguage(locDK));
+		System.out.println("d>I-" + locDK.getDisplayLanguage(locIT));
+
+		// NumberFormat
+		float f1 = 123.4567f;
+		Locale locFr = new Locale("fr");
+		NumberFormat[] nfa = new NumberFormat[4];
+
+		nfa[0] = NumberFormat.getInstance();
+		nfa[1] = NumberFormat.getInstance(locFr);
+		nfa[2] = NumberFormat.getCurrencyInstance();
+		nfa[3] = NumberFormat.getCurrencyInstance(locFr);
+		for (NumberFormat nf : nfa) {
+			System.out.println(nf.format(f1));
+		}
+
+		float f2 = 123.4567f;
+		NumberFormat nf = NumberFormat.getInstance();
+		System.out.println(nf.getMaximumFractionDigits() + " ");
+		System.out.println(nf.format(f2) + " ");
+
+		nf.setMaximumFractionDigits(5);
+		System.out.println(nf.format(f2) + " ");
+
+		try {
+			System.out.println(nf.parse("1234.567"));
+			nf.setParseIntegerOnly(true);
+			System.out.println("1234.567");
+		} catch (ParseException pex) {
+			pex.printStackTrace();
+		}
+	}
 }
