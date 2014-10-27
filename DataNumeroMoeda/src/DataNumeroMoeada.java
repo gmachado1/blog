@@ -11,7 +11,7 @@ public class DataNumeroMoeada {
 		System.out.println("comecando");
 		Date d1 = new Date(1000000000000L);// um trilhao 1 jan 1970
 		System.out.println("primeira data: " + d1.toString());
-		d1.setTime(d1.getTime() + 3600000);
+		d1.setTime(d1.getTime() + 3600000); //getTime pega o tempo e acrescenta 3600000 milissegundos
 		System.out.println("nova data: " + d1.toString());
 		Date now = new Date();
 		System.out.println("data agora: " + now.getTime());
@@ -35,18 +35,17 @@ public class DataNumeroMoeada {
 		// formatando data
 		Date d3 = new Date(1000000000000L);
 		DateFormat[] dfa = new DateFormat[6];
-		dfa[0] = DateFormat.getInstance();
-		dfa[1] = DateFormat.getDateInstance();
-		dfa[2] = DateFormat.getDateInstance(DateFormat.SHORT);
-		dfa[3] = DateFormat.getDateInstance(DateFormat.MEDIUM);
-		dfa[4] = DateFormat.getDateInstance(DateFormat.LONG);
-		dfa[5] = DateFormat.getDateInstance(DateFormat.FULL);
+		dfa[0] = DateFormat.getInstance(); 
+		dfa[1] = DateFormat.getDateInstance();//08/09/01 22:46<< 
+		dfa[2] = DateFormat.getDateInstance(DateFormat.SHORT); //08/09/2001<< 
+		dfa[3] = DateFormat.getDateInstance(DateFormat.MEDIUM);//08/09/01<< 
+		dfa[4] = DateFormat.getDateInstance(DateFormat.LONG);//08/09/2001<< 
+		dfa[5] = DateFormat.getDateInstance(DateFormat.FULL);//8 de Setembro de 2001<<
 
 		for (DateFormat d : dfa) {
 			System.out.println(d.format(d3) + "<< ");
 		}
 
-		// utilizando Parse (não recomendável deverá saber o pq)
 
 		Date d4 = new Date(1000000000000L);
 		System.out.println("d4=" + d4.toString());
