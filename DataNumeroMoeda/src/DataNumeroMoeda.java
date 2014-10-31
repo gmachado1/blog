@@ -5,7 +5,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 
-public class DataNumeroMoeada {
+public class DataNumeroMoeda {
 
 	public static void main(String... args) {
 		System.out.println("comecando");
