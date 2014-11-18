@@ -43,6 +43,7 @@ public class Busca {
 			System.out.println("exc - 0");
 		}
 		
+		
 		try {
 			Pattern n = Pattern.compile("0[xX][0-9a-fA-F]"); // a expressao
 			Matcher numeros = n.matcher("12 0x 0x12 0Xf 0xg"); // a fontex
@@ -55,6 +56,18 @@ public class Busca {
 		}
 		
 		try {
+			Pattern n = Pattern.compile("\\d"); // a expressao
+			Matcher numeros = n.matcher("1 a12 234b"); // a fontex
+			boolean i = false;
+			while (i = numeros.find()) {
+				System.out.print(numeros.start() + " < um numero apenas\n");
+			}
+		} catch (Exception e) {
+			System.out.println(" Erro: < um numero apenas\n");
+		}
+		
+		
+		try {
 			Pattern n = Pattern.compile("\\d+"); // a expressao
 			Matcher numeros = n.matcher("1 a12 234b"); // a fontex
 			boolean i = false;
@@ -62,7 +75,61 @@ public class Busca {
 				System.out.print(numeros.start() + " < um numero ou mais\n");
 			}
 		} catch (Exception e) {
-			System.out.println("erro no 12 0x 0x12 OXf 0xcr");
+			System.out.println("Erro: < um numero ou mais\n");
+		}
+		
+		
+		try{
+			Pattern n = Pattern.compile("proj1([^,])*");
+			//simulando arquivos com ponto e vigula
+			Matcher fonte = n.matcher("proj3.txt,proj1sched.pdf,proj1,proj2,proj1.java");
+			while (fonte.find()) {
+				System.out.print(fonte.start() + " < arquivos \n");
+			}
+		} catch (Exception e) {
+			System.out.println("Erro: < um numero ou mais\n");
+		}
+		
+		try{
+			Pattern n = Pattern.compile("\\d\\d\\d([-\\s])?\\d\\d\\d\\d([^\\w])");
+			//simulando arquivos  de telefone com vigula
+			Matcher tel = n.matcher("1234567, 12x4567, 11123 4567, 123x4567, 123e4567, 123-4567, 12x45674, 123 45673, 123x45673, 123e45671");
+			while (tel.find()) {
+				System.out.print(tel.start() + "< telefone \n");
+			}
+		} catch (Exception e) {
+			System.out.println("Erro: < um numero ou mais\n");
+		}
+		
+		try{
+			Pattern n = Pattern.compile("a.c");
+			//simulando arquivos  de telefone com vigula
+			Matcher abc = n.matcher("ac abc a c");
+			while (abc.find()) {
+				System.out.print(abc.start() + "< testando ponto a.c \n");
+			}
+		} catch (Exception e) {
+			System.out.println("Erro: < um numero ou mais\n");
+		}
+		
+		try{
+			Pattern n = Pattern.compile(".*?xx"); // usamos o "." ponto pra dizer que usaremos um metacaracteres quantificador
+			Matcher relutante = n.matcher("yyxxxyxx");
+			while (relutante.find()) {
+				System.out.print(relutante.start() + "< relutante \n");
+			}
+		} catch (Exception e) {
+			System.out.println("Erro: < relutante, \n"+e);
+		}
+		
+		try{
+			Pattern n = Pattern.compile(".*xx");
+			Matcher ganancioso = n.matcher("yyxxxyxxd");
+			while (ganancioso.find()) {
+				System.out.print(ganancioso.start() + "<  ganancioso \n");
+			}
+		} catch (Exception e) {
+			System.out.println("Erro: < ganancioso \n"+e);
 		}
 
 		// scan
@@ -74,6 +141,7 @@ public class Busca {
 			do {
 				token = s.findInLine(args[0]);
 				System.out.println("found " + token);
+//1b2c335f456
 			} while (token != null);
 		} catch (Exception e) {
 			e.printStackTrace();
