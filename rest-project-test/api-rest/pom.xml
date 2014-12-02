@@ -1,0 +1,30 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>br.com.api.rest</groupId>
+	<artifactId>api-rest</artifactId>
+	<packaging>war</packaging>
+
+
+	<description>Projeto de Teste</description>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	
+	<build>
+		<resources>
+			<resource>
+				<directory>src/main/resources/</directory>
+			</resource>
+		</resources>
+		<outputDirectory>src/main/webapp/WEB-INF/classes/</outputDirectory>
+	</build>
+	<parent>
+		<groupId>br.com.api.test</groupId>
+		<artifactId>rest-project-test</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+</project>
