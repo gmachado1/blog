@@ -26,7 +26,7 @@ public class TestandoSets {
 		System.out.println("############# TREE SET");
 		
 		Set<Surfista> t = new TreeSet<Surfista>();
-		ba[0] = t.add(Surfista.mockSurfistas().get(0));
+		ba[0] = t.add(Surfista.mockSurfistas().get(0));//ds
 		ba[1] = t.add(Surfista.mockSurfistas().get(1));
 		ba[2] = t.add(Surfista.mockSurfistas().get(0));//repetindo
 		ba[3] = t.add(Surfista.mockSurfistas().get(3));
